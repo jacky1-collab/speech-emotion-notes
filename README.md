@@ -1,6 +1,14 @@
 # 語音情緒辨識文獻筆記站
 
-本站為「語音情緒辨識」（Speech Emotion Recognition, SER）之論文閱讀筆記網站，採純靜態網頁架構（HTML、CSS、JavaScript），適合部署於 GitHub Pages。
+這是我自己複習語音情緒辨識（SER）論文用的筆記站，每篇論文一頁，欄位固定，首頁依年份分組。
+
+線上網站連結：https://jacky1-collab.github.io/speech-emotion-notes/
+
+## 專案與筆記說明
+
+論文 PDF 只放在我本機的 `pdf/`，不放進 repo，repo 內只有我自己整理的筆記。
+
+這個專案由 AI 協助新增筆記，規則都寫在 `AGENTS.md`；新增一篇筆記時，只要先把論文 PDF 放進 `pdf/`，再請 AI 先讀 `AGENTS.md`；AI 會先提出計畫，我確認後才會動手。
 
 ## 本機預覽方式
 
