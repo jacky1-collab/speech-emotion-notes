@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAU Aibo 自發性語音情緒語料庫 — 語音情緒辨識文獻筆記</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a href="../../index.html" class="back-link">← 回首頁</a>
+    </nav>
+
+    <header class="note-header">
+      <h1 id="paper-title">Releasing a thoroughly annotated and processed spontaneous emotional database: the FAU Aibo Emotion Corpus</h1>
+      <p class="note-meta">發表年份：<span id="paper-year">2008</span></p>
+    </header>
+
+    <main>
+      <section class="note-section">
+        <h2>論文基本資料</h2>
+        <ul class="meta-list">
+          <li><strong>標題：</strong>Releasing a thoroughly annotated and processed spontaneous emotional database: the FAU Aibo Emotion Corpus</li>
+          <li><strong>作者：</strong>A. Batliner, S. Steidl, E. Nöth</li>
+          <li><strong>年份：</strong>2008</li>
+          <li><strong>來源：</strong>Proceedings of a Satellite Workshop of LREC 2008 on Corpora for Research on Emotion and Affect (Marrakesh, 2008)</li>
+          <li><strong>DOI 或連結：</strong>論文未提及</li>
+        </ul>
+      </section>
+
+      <section class="note-section">
+        <h2>一句摘要</h2>
+        <p id="paper-summary">本研究公開並介紹一個經完整標註與處理之德語兒童與機器人互動自發性語音情緒語料庫 FAU Aibo Emotion Corpus，採逐詞情緒標註，並規劃納入基準評估設定。</p>
+      </section>
+
+      <section class="note-section">
+        <h2>研究問題</h2>
+        <p><strong>背景與現狀：</strong>實驗室外的情緒語音辨識應用必須處理非演出式（non-acted）資料，分類器必須以盡可能接近真實的資料進行訓練；然而自發性情緒資料庫在設計、錄製與標註上的投入遠高於演出式（acted）資料庫（如 Emo-DB、DES），加上隱私因素常阻礙公開，使得獲取自發性資料成為真實情緒處理與分類最嚴重的瓶頸（the most severe bottleneck）（PDF 第 1 頁第 1 節）。</p>
+        <p><strong>計畫沿革與經費：</strong>該語料於 2002 至 2004 年（PDF 第 1 頁第 1 節）在歐盟 PF-STAR 計畫下採集與處理，並於 2005 至 2007 年（PDF 第 1 頁第 1 節）在 HUMAINE 網絡的 CEICES 倡議下進一步標註。作者自述為非常粗略（a (very!) coarse estimate）的估計，針對研究人員與學生進行設計、錄製及手動處理的經費超過 80,000 歐元（&gt; 80 K Euros for researchers and students，PDF 第 4 頁註腳 5）。</p>
+        <p><strong>論文目標：</strong></p>
+        <ol>
+          <li>結合兒童語音與綠野仙蹤任務中的「自然」情緒語音（PDF 第 1 頁第 2 節）。</li>
+          <li>提供該資料庫各面向、標註與使用條件的精簡概述（a condensed overview of aspects, annotations, and conditions of use）（PDF 第 1 頁第 1 節）。</li>
+          <li>以詞為最小可能的情緒單元進行標註，以便後續能以實證為基礎將詞映射至較大單元，尋求最佳分析單元（PDF 第 2 頁第 3.2 節）。</li>
+          <li>建立基準評估與比較：摘要處為「授權協議中規劃納入強制性基準設定，使跨研究室比較成為可能」（PDF 第 1 頁摘要）；第 4 節為「作者想要建立（want to establish）被授權者必須使用的基準」（PDF 第 4 頁第 4 節）；第 5 節為「作者期望（hopefully）接下來能達成的不是嚴格的評比，而是類似『標準化島嶼』：以 FAU Aibo 為對象的研究可依基準設定互相比較」（PDF 第 4 頁第 5 節）。</li>
+        </ol>
+      </section>
+
+      <section class="note-section">
+        <h2>資料集</h2>
+        <p><strong>受試族群：</strong>共 51 位兒童（年齡 10 至 13 歲，男性 21 位、女性 30 位），來自 Mont 與 Ohm 兩所學校，於教室環境錄製（PDF 第 1 頁第 2 節）。</p>
+        <p><strong>互動情境：</strong>採用綠野仙蹤實驗任務（Wizard-of-Oz task），兒童與 Sony 的 AIBO 機器狗互動，兒童被引導相信機器狗能聽懂其口頭指令，但實際上由操作員透過無線區域網路以「Aibo Navigator」軟體控制預設動作序列（結合聽話與不聽話行為），藉以激發兒童自發性情緒反應（PDF 第 1 頁第 2 節）。</p>
+        <p><strong>錄音規格：</strong>使用無線耳戴式麥克風（SHURE UT 14/20 TP 與 WH20TQG 麥克風）及 DAT 錄音機，原始取樣率 48 kHz、16 bit 量化，降取樣至 16 kHz（PDF 第 1 頁第 2 節）。</p>
+        <p><strong>規模與總量：</strong>每位受試者錄音約 30 分鐘（PDF 第 2 頁第 2 節）；錄音因實驗設計（機器狗反應時間）含有大量靜音，原始切分（raw segmentation）後語音量明顯減少，最終得到約 9.2 小時語音（PDF 第 1 頁摘要、第 2 頁第 2 節），總詞數約 48,000 詞（some 48 k words，精確值為 48,401 詞，PDF 第 1 頁摘要、第 2 頁第 3.2 節）。</p>
+        <p><strong>逐詞標註流程：</strong>由 5 位語言學進階學生（advanced students of linguistics；女性 4 位、男性 1 位），依序聆聽語音檔並各自獨立標註（PDF 第 2 頁第 3.2 節）。</p>
+        <p><strong>原始標籤與多數決（majority voting, MV，3 位或以上標註者同意）分佈（PDF 第 2 頁第 3.2 節）：</strong></p>
+        <ul>
+          <li>neutral（中性）：39,169 詞</li>
+          <li>emphatic（強調；可能是溝通開始出現困難的跡象，視為一種前情緒 pre-emotional 狀態）：2,528 詞</li>
+          <li>motherese（媽媽語）：1,260 詞</li>
+          <li>reprimanding（訓誡）：310 詞</li>
+          <li>touchy, i.e., irritated（易怒/煩躁）：225 詞</li>
+          <li>joyful（喜悅）：101 詞</li>
+          <li>angry（憤怒）：84 詞</li>
+          <li>bored（無聊）：11 詞</li>
+          <li>helpless（無助）：3 詞</li>
+          <li>rest（其他非中性）：3 詞</li>
+          <li>surprised（驚訝）：0 詞</li>
+          <li>未達多數決（no MV）：4,707 詞</li>
+          <li>總詞數：48,401 詞</li>
+        </ul>
+      </section>
+
+      <section class="note-section">
+        <h2>方法</h2>
+        <p><strong>詞典與語言學資訊：</strong>以簡化版 VERBMOBIL 標記法進行正字轉寫；建立 SAMPA 語音詞典；建立包含 6 類粗粒度詞性標籤（part-of-speech, POS）與 6 類高階語意標籤（涵蓋效價 valence 等）之句法語意辭典（PDF 第 2 頁第 3.1 節）。</p>
+        <p><strong>子集劃分（AMEN 四類問題）：</strong>為解決類別高度不平衡問題，將 touchy 與 reprimanding 併入 angry 合併為 <strong>Angry (A)</strong> 類別，下取樣 neutral 與 emphatic，形成較平衡的 4 類問題：Angry (A, 1,557 詞)、Motherese (M, 1,224 詞)、Emphatic (E, 1,645 詞)、Neutral (N, 1,645 詞)（PDF 第 2 頁第 3.3 節）。</p>
+        <p><strong>向高階單元映射規則：</strong></p>
+        <ul>
+          <li>語音區段切分（turns）：以停頓時間大於等於 1.5 秒（&ge; 1.5 seconds）作為邊界，區段最長可達 53 詞（PDF 第 2 頁第 2 節、第 3 頁第 3.4 節）。</li>
+          <li>AMEN 區段篩選與停用詞處理：包含 6,070 個 AMEN 詞的語音區段共 3,996 段、總計 17,618 詞；排除停用詞 596 個殘篇片段（fragments）與 196 個助動詞（auxiliaries）（部分詞同時屬於兩類），去除後剩餘 16,856 詞（PDF 第 3 頁第 3.4 節）。</li>
+          <li>區段標籤標記性（markedness）順序判定：非中性標籤比例 &ge; 30% 判定為非中性；非中性標籤中 M 佔 &ge; 50% 判定為 M；A 與 E 數量相等判定為 A；非 M 非 A 則判定為 E；非中性標籤未達 30% 且中性達 70% 則判定為 N。依原文定義之標記性順序：M 比 A 更 marked，A 比 E 更 marked，皆比 N 更 marked（PDF 第 3 頁第 3.4 節）。</li>
+          <li>語塊切分（chunks）：標註主從子句、自由片語、移位與呼格等粗粒度語法邊界，建立語法與語意明確之語塊單元（PDF 第 3 頁第 3.4 節）。</li>
+        </ul>
+        <p><strong>人工校正：</strong>對全庫自動強制對齊（forced alignment）之詞分割進行人工校正，並由第一作者針對 3,990 段 AMEN 區段進行交叉查核（PDF 第 3 頁第 3.5 節）；針對基頻偵測演算法（PDA）提取之音高（pitch）進行人工校正（PDF 第 3 頁第 3.6 節）。</p>
+        <p><strong>互動行為標註：</strong>針對約一半的資料（roughly half of the data）標註機器狗的合作行為 [± co-operative]（PDF 第 3 頁第 3.7 節）。</p>
+        <p><strong>基準評估設計：</strong>規劃納入 2 折交叉驗證（two-fold cross-validation）之基準設定，作者表示將提供此設定的分類結果作為基準，其處理為強制性要求（PDF 第 4 頁第 4 節）。</p>
+      </section>
+
+      <section class="note-section">
+        <h2>結果</h2>
+        <p><strong>標註一致性：</strong>AMEN 四類子集的評分者一致性加權卡帕係數（weighted kappa）為 0.59（PDF 第 2 頁第 3.3 節）。</p>
+        <p><strong>區段層級標籤分佈（共 3,990 段區段，100%）（PDF 第 3 頁第 3.4 節）：</strong></p>
+        <ul>
+          <li>Angry (A)：868 段（21.7%）</li>
+          <li>Emphatic (E)：1,347 段（33.7%）</li>
+          <li>Motherese (M)：495 段（12.4%）</li>
+          <li>Neutral (N)：1,280 段（32.0%）</li>
+          <li>總計：3,990 段（100%）</li>
+        </ul>
+        <p><strong>模型辨識表現：</strong>論文未刊載分類器辨識率。作者表示將提供此設定的分類結果作為基準（PDF 第 4 頁第 4 節）。</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

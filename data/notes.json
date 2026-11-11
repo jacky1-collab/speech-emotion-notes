@@ -1,0 +1,14 @@
+[
+  {
+    "title": "EmoReact: A Multimodal Approach and Dataset for Recognizing Emotional Responses in Children",
+    "year": 2016,
+    "summary": "本研究建立一個針對兒童的多模態情緒影音資料集 EmoReact，涵蓋多種基本與複雜情緒標註，並提出視覺、語音及影音結合之基準模型以評估兒童情緒辨識表現。",
+    "path": "notes/2016/2016-emoreact-multimodal-children-emotion.html"
+  },
+  {
+    "title": "Releasing a thoroughly annotated and processed spontaneous emotional database: the FAU Aibo Emotion Corpus",
+    "year": 2008,
+    "summary": "本研究公開並介紹一個經完整標註與處理之德語兒童與機器人互動自發性語音情緒語料庫 FAU Aibo Emotion Corpus，採逐詞情緒標註，並規劃納入基準評估設定。",
+    "path": "notes/2008/2008-fau-aibo-emotion-corpus.html"
+  }
+]

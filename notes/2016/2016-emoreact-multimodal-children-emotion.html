@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EmoReact 兒童多模態情緒辨識資料集與基準模型 — 語音情緒辨識文獻筆記</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a href="../../index.html" class="back-link">← 回首頁</a>
+    </nav>
+
+    <header class="note-header">
+      <h1 id="paper-title">EmoReact: A Multimodal Approach and Dataset for Recognizing Emotional Responses in Children</h1>
+      <p class="note-meta">發表年份：<span id="paper-year">2016</span></p>
+    </header>
+
+    <main>
+      <section class="note-section">
+        <h2>論文基本資料</h2>
+        <ul class="meta-list">
+          <li><strong>標題：</strong>EmoReact: A Multimodal Approach and Dataset for Recognizing Emotional Responses in Children</li>
+          <li><strong>作者：</strong>Behnaz Nojavanasghari, Tadas Baltrušaitis, Charles E. Hughes, Louis-Philippe Morency</li>
+          <li><strong>年份：</strong>2016</li>
+          <li><strong>來源：</strong>Proceedings of the 18th ACM International Conference on Multimodal Interaction (ICMI '16)</li>
+          <li><strong>DOI 或連結：</strong><a href="https://doi.org/10.1145/2993148.2993168" target="_blank" rel="noopener">https://doi.org/10.1145/2993148.2993168</a>（刊載於 PDF 第 1 頁，論文標記頁碼 137 左下角版權宣告欄，原文為 http://dx.doi.org/10.1145/2993148.2993168）</li>
+        </ul>
+      </section>
+
+      <section class="note-section">
+        <h2>一句摘要</h2>
+        <p id="paper-summary">本研究建立一個針對兒童的多模態情緒影音資料集 EmoReact，涵蓋多種基本與複雜情緒標註，並提出視覺、語音及影音結合之基準模型以評估兒童情緒辨識表現。</p>
+      </section>
+
+      <section class="note-section">
+        <h2>研究問題</h2>
+        <p><strong>應用背景：</strong>自動情緒辨識在兒童科技領域具有核心應用價值，包含社交機器人（social robots）、情感敏感人機互動（affect-sensitive human computer interaction, HCI），以及遠距線上教學中具備情感感知能力的輔導系統（affect-aware tutors）（PDF 第 1 頁，論文標記頁碼 137）。</p>
+        <p><strong>兒童辨識面臨之挑戰：</strong></p>
+        <ol>
+          <li><strong>動作迅速與坐立不安（rapid motions / fidgeting）：</strong>相較於成年人，兒童更容易坐立不安與移動，增加臉部追蹤與身體姿勢分析的難度（PDF 第 1-2 頁，論文標記頁碼 137-138）。</li>
+          <li><strong>臉部遮蔽（occlusion）：</strong>兒童頭部角度變化大，且常有手部動作、肢體或瀏海遮擋面部，造成部分或完全遮蔽（PDF 第 2 頁，論文標記頁碼 138）。</li>
+          <li><strong>公開標註資源匱乏（lack of resources）：</strong>現有公開兒童資料集多數僅包含靜態照片（例如 CAFE、NIMH、Dartmouth、Radboud）；其中僅 MMDB 含有 1 至 2 歲幼兒的影片，由於是幼兒，詞彙極為有限，難以分析口語語音通道（PDF 第 2 頁，論文標記頁碼 138）。</li>
+        </ol>
+        <p><strong>研究目標：</strong>建立涵蓋兒童動態影音之多模態情緒資料集，深入分析兒童表現各情緒時最具預測力的視覺與語音行為指標，並建立單模態（unimodal）與多模態（multimodal）分類基準線（PDF 第 2 頁，論文標記頁碼 138 左欄；PDF 第 7 頁，論文標記頁碼 143）。</p>
+      </section>
+
+      <section class="note-section">
+        <h2>資料集</h2>
+        <p><strong>名稱與來源：</strong>EmoReact 資料集，素材自 YouTube 之 React 頻道下載，記錄兒童面對 37 種主題（食物、科技產品、YouTube 影片、遊戲裝置等）之真實反應影片（PDF 第 2-3 頁，論文標記頁碼 138-139）。</p>
+        <p><strong>受試族群規模：</strong>共 63 位兒童（女性 32 位、男性 31 位，女性佔 51%），年齡介於 4 至 14 歲，涵蓋不同種族（PDF 第 2 頁表 1、第 3 頁，論文標記頁碼 138-139）。</p>
+        <p><strong>影片切分與清理流程：</strong></p>
+        <ol>
+          <li>以 ELAN 軟體進行人工切分，挑選出單一兒童、單一主題且長度大於 3 秒之短片（平均長度約 5 秒），初步獲得 1,254 段片段（PDF 第 3 頁，論文標記頁碼 139）。</li>
+          <li>透過 Amazon Mechanical Turk（MTurk）進行群眾外包標註，每段影片由 3 位獨立評分者針對 17 種情緒狀態進行標註（PDF 第 3 頁，論文標記頁碼 139）。</li>
+          <li>以 Krippendorff's alpha 評估評分者間一致性，過程中剔除 152 段標註者疑似不夠專注（not vigilant）的影片，最終確立 1,102 段影音片段（PDF 第 3 頁，論文標記頁碼 139）。</li>
+        </ol>
+        <p><strong>情緒標籤與實驗標籤：</strong></p>
+        <ul>
+          <li><strong>標註項目：</strong>共 17 種狀態，包括 6 種基本情緒（快樂 happiness、悲傷 sadness、驚訝 surprise、恐懼 fear、厭惡 disgust、憤怒 anger）、中性（neutral）、效價（valence，評分範圍 1 至 7 分），以及 9 種與學習相關之複雜情緒（好奇 curiosity、不確定 uncertainty、興奮 excitement、專注 attentiveness、探索 exploration、困惑 confusion、焦慮 anxiety、尷尬 embarrassment、沮喪 frustration）。除效價外均採 1 至 4 點李克特量表（Likert scale）（PDF 第 3 頁，論文標記頁碼 139）。</li>
+          <li><strong>實驗子集標籤：</strong>挑選評分者一致性 Krippendorff's alpha 大於 0.4 的 8 種情緒標籤進行後續實驗分析：快樂 (0.57)、驚訝 (0.63)、厭惡 (0.61)、恐懼 (0.43)、好奇 (0.41)、不確定 (0.47)、興奮 (0.43)、沮喪 (0.54)（PDF 第 3 頁，論文標記頁碼 139）。其餘情緒標籤未達 0.4：探索 (0.24)、困惑 (0.29)、焦慮 (0.31)、專注 (-0.16)、憤怒 (0.28)、悲傷 (0.23)、尷尬 (0.09)、中性 (0.37)（PDF 第 3 頁，論文標記頁碼 139）。效價 (0.65) 的一致性高於 0.4，但效價採 1 至 7 分評分（其餘情緒為 1 至 4 點量表），且不在這 8 種情緒標籤之內（PDF 第 3 頁，論文標記頁碼 139）。</li>
+        </ul>
+        <p><strong>資料劃分：</strong></p>
+        <ul>
+          <li>分為訓練集（432 段）、驗證集（303 段）與測試集（367 段）（PDF 第 5 頁，論文標記頁碼 141）。</li>
+          <li>各子集採受試者獨立（person-independent，即訓練、驗證與測試集中的兒童互不重疊）方式劃分，每個子集的情緒表現來自 21 位不同兒童，各子集之情緒分佈相似（PDF 第 5 頁，論文標記頁碼 141）。</li>
+        </ul>
+      </section>
+
+      <section class="note-section">
+        <h2>方法</h2>
+        <p><strong>特徵提取（Feature Extraction）：</strong></p>
+        <ul>
+          <li><strong>視覺特徵：</strong>使用 OpenFace 工具提取，成功處理 72.88% 之影像幀（PDF 第 5 頁，論文標記頁碼 141）。包含臉部動作單元（Facial Action Units, AUs；論文於 PDF 第 4 頁列出清單）、頭部位置與朝向（head position and orientation；包含 x、y、z 軸上的朝向與移動），以及臉部特徵點 PCA 非剛性形狀參數（non-rigid shape parameters）（PDF 第 4 頁，論文標記頁碼 140）。</li>
+          <li><strong>語音特徵：</strong>使用 COVAREP 工具，在音訊有聲片段（voiced segments）每 10 毫秒計算一次，共 76.52% 的影片具有有效語音訊號（PDF 第 5 頁，論文標記頁碼 141）。包含語音品質特徵（NAQ、PSP、MDQ、QOQ、H1-H2、peak-slope）、基頻音高（F0 / pitch）、MFCC 1 至 24 及有聲/無聲段統計（VUV）（PDF 第 4-5 頁，論文標記頁碼 140-141）。</li>
+          <li><strong>特徵匯總：</strong>計算整段影片時間視窗之平均值（mean）與標準差（standard deviation）（PDF 第 5 頁，論文標記頁碼 141）。</li>
+        </ul>
+        <p><strong>行為關聯分析方法：</strong>以 t 檢定（t-test）比較情緒存在與不存在時之特徵差異，計算效果值 Hedges' g，並經多重比較校正（校正後 p &lt; 0.001）（PDF 第 4 頁，論文標記頁碼 140）。</p>
+        <p><strong>分類模型與訓練策略：</strong></p>
+        <ul>
+          <li><strong>類別不平衡處理：</strong>隨機負取樣（under-sampling negative examples）重複 100 次建立 100 個平衡子集，結合多數決（majority voting）集成預測（ensemble classifier）（PDF 第 6 頁，論文標記頁碼 142）。</li>
+          <li><strong>分類器：</strong>評估單純貝氏（Naive Bayes）、線性支援向量機（Linear SVM）與徑向基底函數核心支援向量機（RBF SVM）（PDF 第 5-6 頁，論文標記頁碼 141-142）。</li>
+          <li><strong>多模態融合架構：</strong>
+            <ul>
+              <li>早期融合（Early fusion）：串接視覺與語音特徵後輸入分類器（PDF 第 6 頁，論文標記頁碼 142）。</li>
+              <li>晚期融合（Late fusion）：對視覺集成模型與語音集成模型之多數決結果再取多數決（PDF 第 6 頁，論文標記頁碼 142）。</li>
+              <li>混合融合（Hybrid fusion）：整合視覺、語音及早期融合影音模型三者進行多數決（PDF 第 6 頁，論文標記頁碼 142）。</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>評估指標：</strong>受試者工作特徵曲線下面積（AUC-ROC）與偏斜常態化 F1 分數（skew normalized F1）（PDF 第 6 頁，論文標記頁碼 142）。</p>
+      </section>
+
+      <section class="note-section">
+        <h2>結果</h2>
+        <p><strong>統計量說明與顯著性：</strong>在行為特徵分析中（表 3、表 4），µ 代表整段影片特徵之平均值（mean），δ 之具體統計量定義論文未明說；g 代表效果值 Hedges' g。行為特徵分析均經多重比較校正之 t 檢定，皆具顯著差異（校正後 p &lt; 0.001）（PDF 第 4-5 頁，論文標記頁碼 140-141）。關於基準模型間的比較，論文未提及顯著性檢定（PDF 第 6 頁，論文標記頁碼 142）。</p>
+
+        <p><strong>最具預測力之行為指標（PDF 第 4-5 頁表 3、表 4，論文標記頁碼 140-141）：</strong></p>
+        <ul>
+          <li><strong>視覺指標：</strong>
+            <ul>
+              <li>好奇（Curiosity）：頭部旋轉 HeadRot(rx) 平均值顯著較低（Stat: µ, g = -0.54），水平視線轉移 H Gaze shift 平均值顯著較高（Stat: µ, g = 0.48）。</li>
+              <li>不確定（Uncertainty）：頭部平移 HeadTrans(tx) 統計量 δ 顯著較大（Stat: δ, g = 0.22）。</li>
+              <li>厭惡（Disgust）：垂直視線轉移 V Gaze shift 統計量 δ 顯著較高（Stat: δ, g = 0.48），作者指出此現象展現了移開目光（looking away）的行為；皺鼻 Nose wrinkler 平均值顯著較高（Stat: µ, g = 0.33）；抬上眼瞼 Upper lid raiser 平均值顯著較高（Stat: µ, g = 0.33）。</li>
+            </ul>
+          </li>
+          <li><strong>語音指標：</strong>
+            <ul>
+              <li>恐懼（Fear）與厭惡（Disgust）：基頻 F0 平均值顯著上升（Stat: µ，恐懼 g = 0.81，厭惡 g = 0.60），MDQ 平均值顯著下降（Stat: µ，恐懼 g = -0.69，厭惡 g = -0.70），作者指出這反映出緊繃刺耳的嗓音（tense and creaky voice）與高音高。</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>基準模型跨情緒平均表現（PDF 第 6 頁表 5，論文標記頁碼 142）：</strong></p>
+        <ul>
+          <li><strong>基準線比較（分開列示）：</strong>
+            <ul>
+              <li>多數決基準（Majority voting）：音訊、視覺、影音特徵設定下 AUC 皆為 0.50，F1 未定義（論文表 5 註腳說明 skew normalized F1 對多數決不適用）。</li>
+              <li>隨機猜測基準（Random）：音訊、視覺、影音特徵設定下 AUC 皆為 0.50，F1 皆為 0.50。</li>
+              <li>所有機器學習模型之 AUC 皆高於多數決與隨機猜測（0.50）；F1 皆高於隨機猜測（0.50）。</li>
+            </ul>
+          </li>
+          <li><strong>純音訊特徵（Audio）：</strong>Naive Bayes（AUC 0.57, F1 0.55）；Linear SVM（AUC 0.61, F1 0.66）；RBF SVM（AUC 0.61, F1 0.69）（兩款 SVM 之 AUC 並列 0.61）。</li>
+          <li><strong>純視覺特徵（Visual）：</strong>Naive Bayes（AUC 0.59, F1 0.57）；Linear SVM（AUC 0.62, F1 0.66）；RBF SVM（AUC 0.62, F1 0.68）（兩款 SVM 之 AUC 並列 0.62）。</li>
+          <li><strong>影音特徵結合（Audio-Visual features，屬特徵層級串接之早期融合）：</strong>Naive Bayes（AUC 0.61, F1 0.61）；Linear SVM（AUC 0.63, F1 0.65）；RBF SVM（AUC 0.64, F1 0.69）。</li>
+        </ul>
+
+        <p><strong>模態優勢差異與融合策略比較：</strong></p>
+        <ul>
+          <li><strong>模態優勢差異：</strong>恐懼（fear）與驚訝（surprise）在語音特徵上的預測效果較強；沮喪（frustration）與興奮（excitement）則在視覺特徵上表現較佳（PDF 第 6 頁圖 3 與第 6.2 節，論文標記頁碼 142）。</li>
+          <li><strong>融合策略比較：</strong>多數多模態方法表現優於單模態（PDF 第 7 頁第 6.3 節，論文標記頁碼 143；比較數據見圖 4，PDF 第 6 頁）。作者在結論中指出，早期、晚期與混合融合的表現相近，但整體上比單模態更能成功預測情緒（PDF 第 7 頁第 7 節，論文標記頁碼 143）。作者指出多模態優於單模態的原因在於各模態在特定情緒上可互補，且當某一模態缺失或受雜訊干擾時，另一模態能提供補償（PDF 第 7 頁第 6.3 節與第 7 節，論文標記頁碼 143）。</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

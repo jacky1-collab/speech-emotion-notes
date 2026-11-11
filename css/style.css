@@ -1,0 +1,280 @@
+/* 語音情緒辨識文獻筆記站 — 共用樣式表 */
+
+/* 基礎設定與學術襯線字體 */
+:root {
+  --bg-color: #faf8f5;
+  --text-color: #222222;
+  --accent-color: #1d3557;
+  --accent-hover: #0d1b2a;
+  --muted-text: #555555;
+  --border-color: #e2ded7;
+  --card-border: #eae6df;
+  --inferred-bg: #fff9db;
+  --inferred-border: #b58900;
+  --error-bg: #fdf2f2;
+  --error-border: #f5c6cb;
+  --error-text: #842029;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+  font-family: "Songti TC", "PMingLiU", "Noto Serif TC", Georgia, serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 單欄、窄版面版型 */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem 1.25rem;
+}
+
+/* 頁首導覽 */
+.nav {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+/* 標題與內文排版 */
+h1 {
+  font-size: 1.85rem;
+  line-height: 1.35;
+  color: var(--accent-color);
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.35rem;
+  margin: 2.25rem 0 1rem 0;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+p {
+  margin: 0 0 1.1rem 0;
+}
+
+ul, ol {
+  margin: 0 0 1.1rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+blockquote {
+  margin: 1.25rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--accent-color);
+  color: var(--muted-text);
+  background-color: rgba(29, 53, 87, 0.03);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: rgba(29, 53, 87, 0.05);
+  font-weight: 600;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.88em;
+  background-color: #f0ece3;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+/* AI 推測內容標記樣式（黃底 + 虛線底線） */
+.inferred {
+  background-color: var(--inferred-bg);
+  border-bottom: 1.5px dashed var(--inferred-border);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+/* 首頁專用樣式 */
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.site-title {
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.site-desc {
+  color: var(--muted-text);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.noscript-warning {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  border-radius: 4px;
+}
+
+.empty-message {
+  padding: 1.5rem;
+  background-color: #f4f1ea;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--muted-text);
+  font-style: italic;
+  text-align: center;
+}
+
+.error-message {
+  padding: 1rem 1.25rem;
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 4px;
+  color: var(--error-text);
+}
+
+.year-section {
+  margin-top: 2.5rem;
+}
+
+.year-title {
+  font-size: 1.35rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.notes-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-card {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.note-card:last-child {
+  border-bottom: none;
+}
+
+.note-card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.note-card-title:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+.note-card-meta {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 0.4rem;
+}
+
+.note-card-summary {
+  margin: 0;
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 筆記頁專用樣式 */
+.note-header {
+  margin-bottom: 2rem;
+}
+
+.note-meta {
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  margin-top: 0.5rem;
+}
+
+.meta-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.meta-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.meta-list strong {
+  color: #111111;
+}
+
+.note-section {
+  margin-bottom: 2rem;
+}
